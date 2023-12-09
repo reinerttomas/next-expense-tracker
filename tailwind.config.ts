@@ -7,14 +7,16 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+    extend: {},
+    container: {
+      screens: {
+        '2xl': '1000px',
       },
     },
   },
-  plugins: [],
+  daisyui: {
+    themes: ['light', 'dark'],
+  },
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
 }
 export default config
